@@ -4,12 +4,13 @@ node slave1.puppet {
   }
   
   service { 'httpd':
-  ensure => running,
-  enable => true,
+    ensure => running,
+    enable => true,
   }
   
-  exec { 'Run a command':
-    command => 'mv /vagrant/index.html /var/www/html/index.html',
+  file { '/vagrant/index.html':
+    ensure => present,
+    source => "/var/www/html/index.html",
   }
 }
 
