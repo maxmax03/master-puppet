@@ -3,10 +3,3 @@ node slave1.puppet {
     ensure => present,
   }
 }
-
-service { 'httpd':
-  ensure => running,
-  start => '/usr/sbin/httpd start', 
-  stop => '/usr/sbin/httpd stop', 
-  pattern => '/usr/sbin/httpd',
-}
