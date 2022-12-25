@@ -8,9 +8,9 @@ node slave1.puppet {
     enable => true,
   }
   
-  file { '/vagrant/index.html':
+  file { '/var/www/html/index.html':
     ensure => present,
-    source => /var/www/html/index.html,
+    source => "/vagrant/index.html",
   }
 }
 
