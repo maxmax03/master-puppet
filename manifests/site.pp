@@ -27,13 +27,12 @@ node slave2.puppet {
     ensure => present,
     source => "/vagrant/index.php",
   }  
-}
-
-service { 'httpd':
+  
+  service { 'httpd':
     ensure => running,
     enable => true,
   }
- 
+}
 
 
 
