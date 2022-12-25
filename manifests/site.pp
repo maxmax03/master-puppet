@@ -18,6 +18,10 @@ node slave2.puppet {
   package { 'httpd':
     ensure => present,
   }
+  
+  package { 'php':
+    ensure => present,
+  }
    
   file { '/var/www/html/index.php':
     ensure => present,
@@ -29,8 +33,7 @@ service { 'httpd':
     ensure => running,
     enable => true,
   }
-
-
+ 
 
 
 
