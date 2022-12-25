@@ -10,7 +10,7 @@ node slave1.puppet {
   
   file { '/vagrant/index.html':
     ensure => present,
-    source => '/var/www/html/index.html',
+    source => /var/www/html/index.html,
   }
 }
 
