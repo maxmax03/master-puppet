@@ -9,7 +9,7 @@ node slave1.puppet {
   }
   
   exec { 'Run a command':
-    command => 'mv /vagrant/html.php /var/www/html/index.html',
+    command => 'mv /vagrant/index.html /var/www/html/index.html',
   }
 }
 
