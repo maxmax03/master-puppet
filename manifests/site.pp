@@ -3,14 +3,14 @@ node slave1.puppet {
     ensure => present,
   }
   
-  service { 'httpd':
-    ensure => running,
-    enable => true,
-  }
-  
   file { '/var/www/html/index.html':
     ensure => present,
     source => "/vagrant/index.html",
+  }
+  
+  service { 'httpd':
+    ensure => running,
+    enable => true,
   }
 }
 
