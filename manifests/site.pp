@@ -1,10 +1,3 @@
-node master.puppet
-  cron { 'r10k deploy environment -p':
-  command => '/opt/puppetlabs/puppet/bin/r10k deploy environment -p',
-  user    => 'root',
-  minute  => '*/1',
-}
-
 node slave1.puppet {
   package { 'httpd':
     ensure => present,
