@@ -1,6 +1,6 @@
 node minecraft.puppet {
   include nginx
-    nginx::resource::server { 'slave1.puppet':
+    nginx::resource::server { 'master.puppet.com':
     listen_port => 80,
     proxy       => 'http://localhost:8080',
 }
