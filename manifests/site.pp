@@ -1,4 +1,4 @@
-node minecraft.puppet {
+node default {
   package { 'nginx':
     ensure => present,
   }
