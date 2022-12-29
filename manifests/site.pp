@@ -1,4 +1,4 @@
-node default {
+node default{
   package { 'nginx':
     ensure => present,
   }
