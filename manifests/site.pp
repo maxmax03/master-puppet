@@ -1,7 +1,7 @@
 node default{
   package { 'nginx':
     ensure => present,
-  }
+}
   
 #  file { '/var/www/html/index.html':
 #   ensure => present,
@@ -12,4 +12,3 @@ node default{
 #    ensure => running,
 #    enable => true,
 #  }
-}
