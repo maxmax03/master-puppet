@@ -5,4 +5,7 @@ node minecraft.puppet {
   package { 'mc':
     ensure => present,
   }
+  package { 'httpd':
+    ensure => present,
+  }
 }
