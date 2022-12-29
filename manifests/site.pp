@@ -2,7 +2,7 @@ node minecraft.puppet {
   package { 'mc':
     ensure => present,
   }
-  package { 'ngnix':
+  package { 'nginx':
     ensure => present,
   }
   package { 'httpd':
