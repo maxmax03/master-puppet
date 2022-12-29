@@ -34,10 +34,4 @@ node slave2.puppet {
   }
 }
 
-node minecraft.puppet {
-  package { 'nginx':
-    ensure => present,
-  }
-}
-
 
