@@ -5,9 +5,10 @@ node mineserver.puppet {
 #  listen_port => 80,
 #  proxy       => 'http://slave1.puppet',
 #}
-    manage_repo => true,
-    package_source => 'nginx-mainline'
-}
+     manage_repo => true,
+     package_source => 'nginx-mainline'
+     }
+   }  
 
 #  nginx::resource::upstream { 'upstream_app':
 #    members => [
