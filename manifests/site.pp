@@ -19,7 +19,7 @@ class{'nginx': }
     ],
   }
   nginx::resource::location{'/test':
-  proxy => 'http://upstream_app/' ,
+  proxy => 'http://upstream_app/',
   server => 'www.myhost.com'
   }
 } 
