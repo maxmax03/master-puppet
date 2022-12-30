@@ -6,6 +6,6 @@ node mineserver.puppet {
     ],
   }
   nginx::resource::location{'/test':
-  proxy => 'test_app' ,
+  proxy => 'http://test_app/' ,
   server => 'localhost'
  }
