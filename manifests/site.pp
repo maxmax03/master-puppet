@@ -1,5 +1,10 @@
 node mineserver.puppet {
   class{"nginx":
+  
+  nginx::resource::server { 'localhost':
+  listen_port => 80,
+  proxy       => 'http://slave1.puppet',
+}
 #    manage_repo => true,
 #    package_source => 'nginx-mainline'
 
@@ -23,21 +28,21 @@ node mineserver.puppet {
 #}
 
 
-  nginx::resource::upstream { 'mineserver.puppet':
-  members => {
-    'localhost:3000' => {
-      server => '192.168.50.2',
-      port   => 3000,
-      weight => 1,
-    },
-    'localhost:3001' => {
-      server => '192.168.50.3',
-      port   => 3001,
-      weight => 1,
-    },
-  },
-}
+#  nginx::resource::upstream { 'mineserver.puppet':
+#  members => {
+#    'localhost:3000' => {
+#      server => '192.168.50.2',
+#      port   => 3000,
+#      weight => 1,
+#    },
+#    'localhost:3001' => {
+#      server => '192.168.50.3',
+#      port   => 3001,
+#      weight => 1,
+#    },
+#  },
+#}
 
-nginx::resource::server { :
-  proxy => 'mineserver.puppet',
-}
+#nginx::resource::server { :
+#  proxy => 'mineserver.puppet',
+#}
