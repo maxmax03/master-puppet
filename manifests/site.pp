@@ -1,15 +1,12 @@
 node mineserver.puppet {
-  class{"nginx":
+  #class{"nginx":
+  class{'nginx': }
 #  
 #  nginx::resource::server { 'localhost':
 #  listen_port => 80,
 #  proxy       => 'http://slave1.puppet',
 #}
-     manage_repo => true,
-     package_source => 'nginx-mainline'
-     }
-   }  
-
+ 
 #  nginx::resource::upstream { 'upstream_app':
 #    members => [
 #      '192.168.50.2:80',
