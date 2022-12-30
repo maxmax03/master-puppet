@@ -3,7 +3,7 @@ node mineserver.puppet {
  # nginx::resource::server { 'test.example.com':
   # listen_port => 80,
   # proxy       => 'http://192.168.50.2:80',
-}
+ #}
   package { 'mc':
     ensure => present,
   }
