@@ -1,5 +1,7 @@
 node mineserver.puppet {
-  class{'nginx': }
+  class{'nginx':
+    manage_repo => true,
+    package_source => 'nginx-mainline'
 }
 #  
 #  nginx::resource::server { 'localhost':
