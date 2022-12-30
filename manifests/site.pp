@@ -23,7 +23,7 @@ node mineserver.puppet {
 #}
 
 
-  nginx::resource::upstream { '192.168.50.4':
+  nginx::resource::upstream { 'mineserver.puppet':
   members => {
     'localhost:3000' => {
       server => '192.168.50.2',
@@ -39,5 +39,5 @@ node mineserver.puppet {
 }
 
 nginx::resource::server { :
-  proxy => '192.168.50.4',
+  proxy => 'mineserver.puppet',
 }
