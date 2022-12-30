@@ -9,6 +9,6 @@ node mineserver.puppet {
     },
 }
 
-nginx::resource::server { '192.168.50.2':
+nginx::resource::server { 'localhost':
   proxy => 'http://slave.puppet',
 }
