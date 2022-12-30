@@ -1,6 +1,6 @@
 node mineserver.puppet {
   include nginx
-  nginx::resource::server { 'test.myhost.com':
-  proxy       => 'slave1.puppet:80',
+  nginx::resource::server { 'localhost':
+  proxy       => '192.168.50.2:80',
   }
 }
