@@ -12,10 +12,15 @@ node mineserver.puppet {
     ensure => present,
   }
 class{'nginx': }
-}
 
-# include nginx
- # nginx::resource::server { 'test.example.com':
- # listen_port => 80,
- # proxy       => 'http://192.168.50.2:80',
- #}
+nginx::resource::upstream { 'upstream_app':
+    members => [
+      '192.168.50.2:80',
+    ],
+  }
+  
+  nginx::resource::location{'/test':
+  proxy => 'http://upstream_app/' ,
+  server => 'www.myhost.com'
+ }
+
