@@ -19,3 +19,4 @@ node mineserver.puppet {
     server => 'localhost',
 
   }
+}
