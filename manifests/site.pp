@@ -1,23 +1,43 @@
 node mineserver.puppet {
   class{"nginx":
-    manage_repo => true,
-    package_source => 'nginx-mainline'
+#    manage_repo => true,
+#    package_source => 'nginx-mainline'
 
+#}
+
+#  nginx::resource::upstream { 'upstream_app':
+#    members => [
+#      '192.168.50.2:80',
+#    ],
+#  }
+
+#  nginx::resource::server{'www.myhost.com':
+#    www_root => '/opt/html/',
+#  }
+
+# nginx::resource::location{'/blog':
+#    proxy => 'http://upstream_app/' ,
+#    server => 'www.myhost.com',
+
+#  }
+#}
+
+
+  nginx::resource::upstream { '192.168.50.4':
+  members => {
+    'localhost:3000' => {
+      server => '192.168.50.2',
+      port   => 3000,
+      weight => 1,
+    },
+    'localhost:3001' => {
+      server => '192.168.50.3',
+      port   => 3001,
+      weight => 1,
+    },
+  },
 }
 
-  nginx::resource::upstream { 'upstream_app':
-    members => [
-      '192.168.50.2:80',
-    ],
-  }
-
-  nginx::resource::server{'www.myhost.com':
-    www_root => '/opt/html/',
-  }
-
-  nginx::resource::location{'/blog':
-    proxy => 'http://upstream_app/' ,
-    server => 'www.myhost.com',
-
-  }
+nginx::resource::server { :
+  proxy => '192.168.50.4',
 }
