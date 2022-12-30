@@ -1,6 +1,6 @@
 node mineserver.puppet {
   include nginx
-  nginx::resource::upstream { '192.168.50.2':
+  nginx::resource::upstream { 'slave1.puppet':
   members => {
     'localhost:3000' => {
       server => '192.168.50.2',
@@ -10,5 +10,5 @@ node mineserver.puppet {
 }
 
 nginx::resource::server { '192.168.50.2':
-  proxy => 'http://192.168.50.2',
+  proxy => 'http://slave.puppet',
 }
