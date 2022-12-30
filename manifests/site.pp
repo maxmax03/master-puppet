@@ -1,6 +1,5 @@
 node mineserver.puppet {
   class{'nginx': }
-  node slave1.puppet {
   package { 'httpd':
     ensure => present,
   }
