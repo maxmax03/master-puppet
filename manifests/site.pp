@@ -2,7 +2,7 @@ node mineserver.puppet {
   include nginx
   nginx::resource::upstream { 'upstream_app':
     members => [
-      '192.168.50.2',
+      'slave1.puppet',
     ],
   }
   nginx::resource::server { 'localhost':
