@@ -4,7 +4,7 @@ node mineserver.puppet {
     package_source => 'nginx-mainline'
 }
 
-  nginx::resource::upstream { 'upstream_app':
+  nginx::resource::upstream { '192.168.50.2':
     members => [
       '192.168.50.2:80',
     ],
@@ -15,7 +15,7 @@ node mineserver.puppet {
   }
 
   nginx::resource::location{'/blog':
-    proxy => 'http://upstream_app/' ,
+    proxy => 'http://192.168.50.2/' ,
     server => 'localhost',
 
   }
