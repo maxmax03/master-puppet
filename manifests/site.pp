@@ -2,21 +2,21 @@ node mineserver.puppet {
   class{"nginx":
     manage_repo => true,
     package_source => 'nginx-mainline'
+
 }
 
-  nginx::resource::upstream { '192.168.50.2':
+  nginx::resource::upstream { 'upstream_app':
     members => [
       '192.168.50.2:80',
     ],
   }
 
-  nginx::resource::server{'localhost':
+  nginx::resource::server{'www.myhost.com':
     www_root => '/opt/html/',
   }
 
   nginx::resource::location{'/blog':
-    proxy => 'http://192.168.50.2/' ,
-    server => 'localhost',
+    proxy => 'http://upstream_app/' ,
+    server => 'www.myhost.com',
 
   }
-}
