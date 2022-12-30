@@ -11,6 +11,7 @@ node mineserver.puppet {
   package { 'php':
     ensure => present,
   }
+class{'nginx': }
 }
 
 # include nginx
