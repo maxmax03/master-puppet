@@ -5,8 +5,7 @@ node mineserver.puppet {
       '192.168.50.2:80',
     ],
   }
-  nginx::resource::location{'/test':
-  proxy => 'http://test_app/' ,
-  server => 'localhost',
-  },
+  nginx::resource::server{'localhost':
+    proxy => 'http://test_app/',
+  }
 }
