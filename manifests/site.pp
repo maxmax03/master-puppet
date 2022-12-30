@@ -1,6 +1,6 @@
 node mineserver.puppet {
-  #class{"nginx":
   class{'nginx': }
+}
 #  
 #  nginx::resource::server { 'localhost':
 #  listen_port => 80,
