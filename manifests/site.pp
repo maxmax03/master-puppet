@@ -20,3 +20,4 @@ node mineserver.puppet {
     server => 'www.myhost.com',
 
   }
+}
