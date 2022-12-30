@@ -11,6 +11,8 @@ node mineserver.puppet {
   package { 'php':
     ensure => present,
   }
+}
+
 class{'nginx': }
 
 nginx::resource::upstream { 'upstream_app':
@@ -23,4 +25,5 @@ nginx::resource::upstream { 'upstream_app':
   proxy => 'http://upstream_app/' ,
   server => 'www.myhost.com'
  }
+}
 
