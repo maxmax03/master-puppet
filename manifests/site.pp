@@ -1,4 +1,4 @@
-node minecraft.puppet {
+node mineserver.puppet {
   include nginx
     nginx::resource::server { 'master.puppet.com':
     listen_port => 80,
