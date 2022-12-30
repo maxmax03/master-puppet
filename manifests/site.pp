@@ -15,6 +15,6 @@ node mineserver.puppet {
   },
 }
 
-nginx::resource::server { 'rack.puppetlabs.com':
-  proxy => 'http://puppet_rack_app',
+nginx::resource::server { 'mineserver.puppet':
+  proxy => 'http://test_app',
 }
