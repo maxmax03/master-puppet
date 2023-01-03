@@ -1,16 +1,13 @@
 node mineserver.puppet {
-  class{'nginx': }
-  package { 'httpd':
-    ensure => present,
-  }
+  include nginx
   
   nginx::resource::server { '192.168.50.2':
   listen_port => 8080,
   proxy       => '192.168.50.4',
+  }
 }
 #    manage_repo => true,
 #    package_source => 'nginx-mainline'
-}
 #  
 #  nginx::resource::server { 'localhost':
 #  listen_port => 80,
