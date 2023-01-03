@@ -1,9 +1,9 @@
 node mineserver.puppet {
   include nginx
   
-  nginx::resource::server { '192.168.50.4':
-  listen_port => 8080,
-  proxy       => '192.168.50.2',
+  nginx::resource::server { '192.168.50.4:80':
+  # listen_port => 8080,
+  proxy       => '192.168.50.2:8080',
   }
 }
 #    manage_repo => true,
