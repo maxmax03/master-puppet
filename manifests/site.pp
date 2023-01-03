@@ -3,7 +3,7 @@ node mineserver.puppet {
   
   nginx::resource::server { '192.168.50.2:8080':
     listen_port => 8080,
-    proxy       => '192.168.50.4/static',
+    proxy       => '192.168.50.4',
   }
 }
 #    manage_repo => true,
