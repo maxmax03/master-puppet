@@ -12,14 +12,14 @@ node mineserver.puppet {
   }
   
   exec { 'selinux_to_permissive':
-  command     => 'setenforce 0',
-  path        => [ '/usr/bin', '/bin', '/usr/sbin' ],
-  user       => 'root',
+    command     => 'setenforce 0',
+    path        => [ '/usr/bin', '/bin', '/usr/sbin' ],
+    user       => 'root',
   }
 
-exec { 'reboot_nginx':
-  command     => 'systemctl restart nginx',
-  path        => [ '/usr/bin', '/bin', '/usr/sbin' ],
-  user => 'root',
+  exec { 'reboot_nginx':
+    command     => 'systemctl restart nginx',
+    path        => [ '/usr/bin', '/bin', '/usr/sbin' ],
+    user => 'root',
   }
 }
