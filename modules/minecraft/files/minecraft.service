@@ -4,7 +4,7 @@ Description=minecraft
 [Service]
 WorkingDirectory=/opt/minecraft
 
-ExecStart=/etc/alternatives/jre_1.8.0_openjdk/bin/java -Xmx1024M -Xms1024M -jar server.jar nogui
+ExecStart=/etc/alternatives/jre_1.8.0_openjdk/bin/java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui
 
 [Install]
 WantedBy=multi-user.target
