@@ -1,0 +1,10 @@
+[Unit]
+Description=minecraft
+
+[Service]
+ExecStart=/etc/alternatives/java -Xmx1024M -Xms1024M -jar minecraft_server.1.19.3.jar nogui
+
+WorkingDirectory=/opt/minecraft
+
+[Install]
+WantedBy=multi-user.target
