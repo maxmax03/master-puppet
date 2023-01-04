@@ -1,6 +1,6 @@
 node mineserver.puppet {
 
-package {'java-1.8.0-openjdk':
+package {'java-17-openjdk':
   ensure => installed,
 }
 
