@@ -21,12 +21,11 @@ file { '/opt/minecraft/server.jar':
   file { '/etc/systemd/system/minecraft.service':
     owner => 'root',
     group => 'root',
-    ensure => file,
+    ensure => present,
     mode   => '0644',
-    source => 'http://raw.githubusercontent.com/maxmax03/master-puppet/minecraft/modules/minecraft/files/minecraft.service',
+    source => "/vagrant/minecraft.service",
     replace => false,
     }
-
 
  ~> service { 'minecraft':
         ensure => running,
