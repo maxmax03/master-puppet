@@ -1,5 +1,5 @@
 class minecraft {
-  package {'java-1.8.0-openjdk':
+  package {'java-17-openjdk':
     ensure => installed
     }
 
@@ -14,7 +14,7 @@ file {'/opt/minecraft/eula.txt':
 
 file { '/opt/minecraft/server.jar':
   ensure => file,
-  source => 'http://raw.githubusercontent.com/maxmax03/master-puppet/minecraft/modules/minecraft/files/minecraft.service',
+  source => 'https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar',
   replace => false,
      }
 
