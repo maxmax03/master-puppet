@@ -14,7 +14,7 @@ file {'/opt/minecraft/eula.txt':
 
 file { '/opt/minecraft/server.jar':
   ensure => file,
-  source => 'https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar',
+  source => 'https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar',
   replace => false,
      }
 
