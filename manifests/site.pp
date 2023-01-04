@@ -23,7 +23,7 @@ file { '/opt/minecraft/server.jar':
     group => 'root',
     ensure => file,
     mode   => '0644',
-    source => 'https://raw.githubusercontent.com/maxmax03/master-puppet/minecraft/modules/minecraft/files/minecraft.sevice',
+    source => 'https://github.com/maxmax03/master-puppet/blob/minecraft/modules/minecraft/files/minecraft.service',
     replace => false,
     }
 
