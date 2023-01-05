@@ -1,4 +1,5 @@
 node master.puppet { 
+
   include nginx
 
   nginx::resource::server { '192.168.50.1':
