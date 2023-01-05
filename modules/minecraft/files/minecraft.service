@@ -1,9 +1,0 @@
-[Unit]
-Description=minecraft
-
-[Service]
-WorkingDirectory=/opt/minecraft
-ExecStart=/etc/alternatives/jre_17/bin/java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui
-
-[Install]
-WantedBy=multi-user.target
